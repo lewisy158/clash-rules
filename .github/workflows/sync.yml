@@ -1,0 +1,20 @@
+name: Sync Fork
+
+on:
+  push: # push 时触发, 主要是为了测试配置有没有问题
+  schedule:
+    - cron: '0 1 * * *'
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tgymnich/fork-sync@v1.2.1
+        with:
+          # Owner of the forked repository
+          owner: Loyalsoldier
+          # Token for the github API
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Branch to track
+          head: release
+          # Branch to keep updated
+          base: release
