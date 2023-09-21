@@ -117,7 +117,7 @@ jobs:
           access-key-id: ${{ secrets.OSS_KEY_ID }}
           access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
       - name: cp files to aliyun
-        run: ossutil cp -rf ./publish oss://lewis-clash-rules/
+        run: ossutil cp -rf ./publish oss://lewis-share/clash-rules/
 
       - name: Release and upload assets
         uses: softprops/action-gh-release@v1
